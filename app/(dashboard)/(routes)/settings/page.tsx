@@ -1,3 +1,4 @@
+"use client"
 import Heading from "@/components/Heading"
 import { SubscriptionButton } from "@/components/subscription-button"
 import { checkSubscription } from "@/lib/subscription"

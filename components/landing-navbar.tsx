@@ -6,10 +6,18 @@ import {Montserrat} from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "./ui/button"
+import { useEffect, useState } from "react"
 
 const font  = Montserrat({weight: "600", subsets: ["latin"]})
 const LandingNavbar = () => {
     const {isSignedIn} = useAuth()
+    const [mounted, setMounted] = useState(false)
+    useEffect(()=> (
+      setMounted(true)
+    ))
+    if(!mounted){
+      return null
+    }
     return(
         <nav className="p-4 bg-transparent flex items-center justify-between">
             <Link href="/" className="flex items-center " >
